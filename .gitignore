@@ -19,3 +19,10 @@
 *.exe
 *.out
 *.app
+
+# Other libraries
+*.sdf
+*.map
+*.ipch
+*.tlog
+*.log
