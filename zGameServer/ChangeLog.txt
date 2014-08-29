@@ -1,0 +1,471 @@
+// ======================================================================
+// Project:				zGameServer
+// ----------------------------------------------------------------------
+// Version:				Season 6 Episode 3
+// ----------------------------------------------------------------------
+// Protocol:			English (GMO)
+// ----------------------------------------------------------------------
+// Developer:			DarkSim
+// ----------------------------------------------------------------------
+// Start Date:			20.01.2013
+// ----------------------------------------------------------------------
+// Update version:		1.0.0.99
+// ======================================================================
+
+[FixMe]
+1> Need delete old period system and include it to periodex system
+1> Need finish CashShop
+1> Need add all items effects (cashshop rings and etc)
+1> Try Attack In Not Attack Area error when using 265 (Dragon Slasher) & 262 (Chain Drive) skills
+1> Need check all calls to gObjRemoveBuffEffect
+1> ResistanceCheck -> decompile
+
+[20.01.2013]
+1> [stafx.h] Added define 'SEASON6DOT3_ENG'
+1> Deleted SEASON5DOT2_JPN, all changes undefined
+1> Changed XOR32 keys
+1> More test changes in DSProtocol, user and etc
+1> [JewelMixSystem.cpp] Fixed item delete in ::MixJewel
+1> [JewelMixSystem.cpp] New mix system finished, 99% decompiled from 6.2 THA
+
+[21.01.2013]
+1> Finished 'ExpandedInventory' and 'ExpandedWarehouse' systems, defined in <EXPINV>
+
+[22.01.2013]
+1> [zzzitem.h] define <MAX_TYPE_PLAYER> changed from 6 to 7, added MONK
+
+1> [zzzitem.cpp] <OpenItemScript> Updated, added MONK class read for item script
+1> [protocol.cpp] <PChatProc> Gens chat added, decompiled from 6.2 THA, but without exdb function
+1> Deleted ExpandedInventory' and 'ExpandedWarehouse' systems, becoz are bugged, need start from null again
+
+[23.01.2013]
+1> [ItemSeedSphere.cpp] Fully decompiled from 1.01.00, all names are original
+
+[27.01.2013]
+1> [GameMain.cpp] <GameMainInit> Changed map loading to 1.01.00
+1> Max magic size changed to 150 (450) by 1.01.00
+1> Many changes with some skills check for RF
+
+[29.01.2013]
+1> [ObjUseSkill.cpp] Added 7 new functions to class, <SkillCharge> & <SkillMonkBuff> fully decompiled from 1.01.00
+1> [ObjUseSkill.cpp] <EnableSkill> changed, added RF skills (no master>
+1> [ObjUseSkill.cpp] <UseSkill> changed, added new cases for RF & doppelganger (1.01.00)
+1> [ObjUseSkill.cpp] <RunningSkill> changed, added new casses for RF (1.01.00)
+1> [ObjUseSkill.cpp] Changed 1 function name to original (SkillAreaMonsterAttack)
+1> [ObjUseSkill.cpp] <SkillEvilMonster> (90%), <SkillMonkBarrageJustOneTarget> (100%) decompiled
+1> [ObjAttack.cpp] <Attack> Changed (+2 new arguments) by 1.01.00
+1> [protocol.cpp] Added new cases 0x4A & 0x4B for RF attacks
+1> [protocol.cpp] Added 3 new functions <GCMonkMagicAttack> (0%), <GCMonkDarkSideTargetSelect> (60%), <GCMonkMagicAttackNumberSend> (95%) by 1.01.00
+
+[06.02.2013]
+1> [ObjUseSkill.cpp] Finished <SkillMonkBuffApplyParty>, <SkillMonkBarrageJustOneTarget>, <SkillMonkDarkSideGetTargetIndex> (all decompiled from 1.01.00 by eRRoR, thanks)
+1> [Attack.cpp] Finished <CObjAttack::Attack> (decompiled from 1.01.00, but for temp master elements are commented, thanks for eRRoR again)
+1> Added "Base" folder by 1.01.00 with some test templates for new libs
+1> Added "Lua" folder with lua lib and files for MuLua
+1> Added LuaFun / LuaSample / MuLua cpp & h files fully decompiled from 1.01.00
+1> Added WinConsole, fully decompiled from 1.01.00
+1> [LogProc.cpp] Updated, added some new functions from 1.01.00 (all done)
+1> [StdAfx.h] Added lua51.lib load
+1> Added MonsterRegenSystem, fully decompiled from 1.01.00
+1> Added MonsterStatCalc, fully decompiled from 1.01.00
+1> [user.h] Added MASTERLEVEL_PASSIVE_SKILL_OPTION struct (98% decompiled) & defined in OBJECTSTUCT by m_MPSkillOpt
+1> [zzzitem.cpp] Fully decompiled from 1.01.00, Period argument on Convert defined in "TEMP_PERIOD_VAR" for temp
+
+[09.02.2013]
+1> All BuffSystem decompiled from 1.01.00, all names are original
+
+[12.02.2013]
+1> Added lua NpcTalk extension (LuaNPC) + some classes to work with lua scripts
+
+[13.02.2013]
+1> Added lua MonsterDie extension (LuaMonsterDie)
+
+[16.02.2013]
+1> Expanded inventory fully complete, one by one from 1.01.00 (decompiled)
+1> [user.cpp] Added <CheckOutOfWarehouse>, <WarehouseExtentCheck> (fully decompiled from 1.01.00)
+1> Expanded warehouse fully complete, one by one from 1.01.00 (decompiled)
+1> Added <PeriodItemEx> system, fully decompiled from 1.01.00, need refenses for "TEMP_PERIOD_VAR" define and add data to DB & DS
+1> More fixes with RF, all move gates are work normaly for now
+
+[17.02.2013]
+1> Added TemporaryUserManager (for now only to PartySystem), 95% decompiled from 1.01.00 (5% for defines on etc files =D)
+1> [prodef.h], [protocol.cpp], etc - increased max chat len from 60 to 89 for GMO 6.3 (SEASON6DOT3_ENG)
+1> ImperialGuardian / ImperialGuardianRewardExp / EventDungeonItemBag fully finished, decompiled from 1.01.00
+1> Fixed all warp / map attr / gate bugs with ImperialGuardian
+
+[18.02.2013]
+1> [MasterLevelSystem.cpp] Fully decompiled from 1.01.00 (All names are original), need include
+1> [MasterLevelSystem.cpp] Finished, but need uncomment some calls after complete SkillSystem and etc
+1> [ItemBag.cpp] Compared with 1.01.00 - All OK
+
+[22.02.2013]
+1> [ProbabilityItemBag.cpp] Complete for 1.01.00, but need test, bcz don't sure on 100%
+1> [protocol.cpp] <CGItemDropRequest> Complete for 1.01.00, but need test too)
+1> [Event.cpp] Added 6 new functions from 1.01.00 for new itembags
+1> [GameMain.cpp] <LoadItemBag> Added new boxes, but need recheck all after luckysystem and etc. blya
+1> [Event.cpp] <GMPresentBoxItemBagOpen> Fixed box open (X / Y)
+1> [GensSystem.cpp] <CalGensClass> Fixed class calculation for Super Knight
+1> [GensSystem.cpp] Gens Reward system are finished
+1> Monk wings & mini wings complete (exception: 005A43CB, 00665F52)
+1> [GensSystem] Remaded RankingUpdater, included to zDataServer timer
+1> [JewelOfHarmonySystem.cpp] Checked for 1.01.00
+1> [protocol.cpp] <CGInventoryItemMove> OK, <CGItemGetRequest> ~OK (without doppel) for 1.01.00
+1> [user.cpp] <DbItemSetInByte> OK for 1.01.00
+1> [user.cpp] <gObjInventoryMoveItem> OK for 1.01.00
+1> [protocol.cpp] <CGChaosBoxItemMixButtonClick> OK for 1.01.00
+1> [MixSystem.h] Class struct, enum CHAOS_TYPE and positions are finished, decompiled from 1.01.00
+1> [MixSystem.cpp] <EventDungeonKeyItemMix>, <GoldenNSilverBoxMix> fully decompiled from 1.01.00
+1> [QuestInfo.cpp] Added Monk reader
+
+[26.02.2013]
+1> [MUHelper.cpp] Complete, but for now without data save in db
+
+[08.03.2013]
+1> [protocol.cpp] <GCMonkDarkSideTargetSelect> decompiled from 1.01.00
+1> [protocol.cpp] <GCMonkMagicAttack> decompiled from 1.01.00
+
+[09.03.2013]
+1> [MixSystem.cpp] Revised for 1.01.00, added new wings support
+1> [BloodCastle.cpp] Decompiled 5 new functions, fixed 4 names & added 1 new m_BridgeData var by 1.01.00
+1> [TemporaryUserManager.cpp] <ResumeBloodCastle> decompiled from 1.01.00
+1> [SetItemOption.cpp] Decompiled <LuckyItemGenSetOption> 1.01.00
+
+[10.03.2013]
+1> [LuckyItem.cpp] Class fully decompiled from 1.01.00
+1> [LuckyItem.cpp] Class included to project (all calls compared, exeption 2 calls from monster class)
+
+[11.03.2013]
+1> [protocol.cpp] <CGInventoryItemMove> fixed for LuckyItem mixes
+1> [LuckyItem.cpp] More fixes
+
+[09.04.2013]
+1> [ObjBaseAttack.cpp] Revised all function for 1.01.00, added byBarrageCOunt in MissChecks
+1> [ObjBaseAttack.cpp] Fixed RF pvp attack
+1> [user.cpp] <gObjMagicAdd> fixed RF skill icons after reading (last argument BYTE -> short by 1.01.00)
+1> [logproc.cpp] Log system from 1.01.00 disabled, down to 1.00.90 (temp, bad decompilition)
+1> Fixed RF weapon skill add (gObjWeaponMagicAdd call with BYTE to WORD)
+
+[10.04.2013]
+1> New socket system fully included to GS (1.01.00 / 1.00.93 decompilition)
+1> [ItemSocketOptionSystem.cpp] Fixed mistakes with -1 / -2 values
+1> All monster configuration removed in "Monster\\" folder
+1> All shop configuration removed in "Shop\\" folder
+1> Removed "TEMP_PERIOD_VAR" (exept: CashShop.cpp), all varibles added
+
+[11.04.2013]
+1> [zzzitem.cpp] Compared all calls for PeriodItem functions by 1.01.00
+1> [zzzitem.cpp] <BufferItemtoConvert3> fixed 28 option up
+1> [zzzitem.cpp] <ItemByteConvert> fixed m_PeriodItemOption flag send
+1> [PeriodItemEx.cpp] <SetPeriodItemInfo> Fixed apply period flag
+
+[12.04.2013]
+1> [protocol.cpp] <CGInventoryItemMove> Fixed SendPeriodItemInfoOnce call
+
+[15.04.2013]
+1> [PeriodItemEx.cpp] <SetExpireNotMatchedData> Fixed bIsValidMatchedItem check (missing !)
+
+[16.04.2013]
+1> [GameShop.cpp] Finished package addon, more fixes and changes, writed complete list of items
+1> [DSProtocol.cpp] Added 4 functions for expand inventory, decompiled from 1.01.00
+1> [protocol.cpp] Added <GCResultForExtendInvenOrWarehouse>, decompiled from 1.01.00
+1> [protocol.cpp] <CGUseItemRecv> Added to use Magic Backpack &  Vault Expansion
+1> [GameShop.cpp] Added protect before buy <CanBeBuy>
+1> [protocol.cpp] <CGUseItemRecv> Added SD potion to use
+1> [user.cpp] <gObjUseRecoveryPotion> revised, added SD potion
+
+[23.04.2013]
+1> [MagicInf.cpp] Decompliled from 1.01.00 for new master skill tree update
+
+[09.06.2013]
+1> [SkillAdditionInfo.cpp] Revised to 1.01.00, some decompiled
+1> [DoppelgangerPosInfo.cpp] Decompiled from 1.01.00
+1> [DoppelgangerLua.cpp] Decompiled from 1.01.00
+
+[10.06.2013]
+1> [MasterLevelSystem.cpp] <GDReqMasterLevelInfo> fixed check for m_bMasterLevelDBLoad
+
+[14.06.2013]
+1> Fixed all <fopen> calls and <fclose> ends
+
+[16.06.2013]
+1> [LuaFun.cpp] <g_Generic_Call> fixed
+
+[17.06.2013]
+1> [MagicDamage.cpp] Fully decompiled from 1.01.00
+
+[18.06.2013]
+1> [MagicInf.cpp] Fixed
+
+[21.06.2013]
+[22.06.2013]
+1> Working with master passive data
+
+[23.06.2013]
+1> [ObjCalCharacter.cpp] <gObjCalcMLSkillItemOption> decompiled from 1.01.00, but some missing
+1> [ObjAttack.cpp] <GetAttackDamage> fixed for new master tree
+
+[25.06.2013]
+1> [ObjAttack.cpp] <GetAttackDamageWizard> fixed for new master tree
+
+[27.06.2013]
+1> [DarkSpirit.cpp] Revised for 1.01.00
+
+[28.06.2013]
+1> [protocol.cpp] <GCMagicListMultiSend> Added temp fix for master skill brands
+
+[29.06.2013]
+1> [MasterLevelSkillTreeSystem.cpp] <MLS_WeaponSkillAdd> Fixed skill add after delete
+1> [zzzitem.h] <GetDetailItemType> Added new type <12> for RF gloves
+
+[30.06.2013]
+1> [user.cpp] <gObjWeaponMagicAdd> Added temp fix for add exist magic or brand based
+1> [BuffEffect.cpp] Added ADD_OPTION_IGNOREDEFENSE for monk buff
+1> [MasterLevelSkillTreeSystem.cpp] Tree finished, but need test and maybe fix some
+
+[04.07.2013]
+1> [protocol.cpp] <CGReqEnterDoppelganger> decompiled from 1.01.00
+
+[05.07.2013]
+1> [TMonsterSkillManager] <MAX_MONSTER_SKILL_INFO_ARRAY> increased to 700 by 1.01.00
+1> [TMonsterSkillManager] <FindMagicInf> Decompiled from 1.01.00
+1> [Doppelganger] finished, decompiled from 1.01.00
+1> [DBSockMng.cpp] <Connect> DataServer 2 enabled for more stable, maybe in future im delete it after all socks fixes
+
+[07.07.2013]
+1> Fixed RF pvp skill work, but need check, maybe some skills work only in gens zones for pvp
+1> [user.cpp] <gObjSetCharacter> Added TempororyManager changes by 1.01.00 (fixed exit from doppelganger)
+1> [Doppelganger.cpp] <ChangeUserIndex> Fixed return in game with temporary status, need fix status 4 on Connected
+1> [protocol.cpp] <ProtocolCore> defined DEBUG_PROTOCOL for enable / disable packet trace
+
+[08.07.2013]
+1> [SetItemOption.cpp] Revised, fixed all positions and bad decompiling
+
+[09.07.2013]
+1> [MonsterItemMng.cpp] Decompiled from 1.01.00
+
+[17.07.2013]
+1> [BuffEffectSlot.cpp] <gObjClearBuffEffect> fixed all calls
+
+[10.08.2013]
+1> Total remove of settings files
+1> [DSProtocol.cpp] Temp fix for character buttons in "CHARCREATE_TEMP" define
+1> [NpcTalk.cpp] <NpcChaosCardMaster> Fixed dialog open
+1> [CheatGuard.cpp] Added XOR key read / Disconnect option
+1> [spe.h] Added reading XOR from CheatGuard
+1> [GameMain.cpp] Fixed some commonserver.cfg value and renamed / deleted some
+1> [Shop.cpp] Added Excellent option for shop items (On reader too)
+1> [MUHelper.cpp] Added data settings reader
+1> [MUHelper.cpp] Finished loading from DB
+1> [ObjUseSkill.cpp] <SkillDeathPoisonForMeDusa> Decompiled from 1.01.00
+1> [gObjMonster.cpp] <gObjMonsterSelectSkillForMedusa> Decompiled from 1.01.00
+1> [gObjMonster.cpp] <gObjMonsterAttack> Some added from 1.01.00
+1> [gObjMonster.cpp] <gObjMonsterDieGiveItem> Added Medusa prize (1.01.00)
+1> Some add for monster 561 regen / skill attack (medusa)
+1> [MonsterRegenSystem.cpp] All calls compared, system enabled (1.01.00)
+
+[11.08.2013]
+1> [zzzitem.cpp] <CItem::Value()> fixed item price
+1> [MixSystem.cpp] All formuls fixed
+1> [NewPVP.cpp] Finished, fully included and fixed
+1> [ObjAttack.cpp] <GetAttackDamageSummoner> Fixed wiz. damage
+
+[12.08.2013]
+1> [MixSystem.cpp] <BloodCastleItemChaosMix> Fixed call to GetMapNumByBCBridge / switch check
+1> [BloodCastle.cpp] <CheckChoasMixItem> Fixed return values to new (from 1.01.00)
+1> [MUHelper.cpp] <SendMacro> Fixed checking lpRequest->btResult
+1> Added 566, 567, 568, 577, 578 NPC by 1.01.00
+1> [Shop.cpp] Added shop 20(19), max shop value up to 21 by 1.01.00
+
+[13.08.2013]
+1> [MixSystem.cpp] <CherryBlossomMix> Fixed item dur for GMO protocol
+1> [ItemSocketOptionSystem.cpp] <IsEnableSocketItem> Added summoner socket items
+
+[14.08.2013]
+1> [License.cpp] New license system finished!
+
+[16.08.2013]
+1> [ObjUseSkill.cpp] <SkillEvilMonster> Redecompiled, now identical with 1.01.00
+1> [gObjMonster.cpp] <gObjMonsterMagicAttack> Fixed BeAttack case
+1> [MasterLevelSystem.cpp] Fixed config loading, added monster list reader
+
+[17.08.2013]
+1> [MuHelper.cpp] Rewrited, now work on multi threads
+
+[19.08.2013]
+1> [ProbabilityItemBag.cpp] Fixed luck if item is Excellent
+1> [ObjUseSkill.cpp] <SkillChainLightning> Fixed
+
+[20.08.2013]
+1> [DSProtocol.cpp] <ItemSerialCreateRecv> Fixed blood castle serial recv (wrong call to GetBridgeIndexByMapNum)
+
+[22.08.2013]
+1> [SkillAdditionalInfo.cpp] Added skill use level reader
+
+[23.08.2013]
+1> [IllusionTempleProccess.cpp] Fixed Class count (extern to 7 by 1.01.00)
+1> [IllusionTempleEvent.cpp] <EnterIllusionTemple> Disabled for time check with event server
+1> [protocol.cpp] <PMoveProc> Fixed attr check, mistake with _CS server side
+1> [JewelOfHarmonySystem.cpp] <SmeltItemBySmeltingStone> Fixed max option level by 1.01.00
+1> [IllusionTempleEvent.cpp] Added m_MinPlayerCount
+
+[24.08.2013]
+1> [protocol.cpp] <CGModifyRequestItem> Added check for DL pets, don't know why wz remove it
+
+[27.08.2013]
+1> [ComboAttack.cpp] <GetSkillPos> Added 6.3 MS skills
+
+[01.09.2013]
+1> [protocol.cpp] <GCMagicListMultiSend> Changed to 1.01.03
+1> [protocol.cpp] <PMSG_MAGICLIST> Revised to 1.01.03
+1> [MasterLevelSkillTreeSystem.cpp] <MLS_WeaponSkillAdd> Revised to 1.01.03 (fixed bug with base skill add)
+1> [GameServer] Remaked menu
+1> [GameServer.cpp] <WinMain> Added reading ports / ips from ServerInfo.dat
+
+[02.09.2013]
+1> [protocol.cpp] <CGActionRecv> Revised to 1.01.03
+1> [HacktoolBlockEx.cpp] Decompiled from 1.01.03
+1> [PacketStatistics.cpp] Decompiled from 1.01.03
+
+[03.09.2013]
+1> [GameShop.cpp] Added inventory save
+1> [GameShop.cpp] User data moved to class from OBJECTSTRUCT
+1> [protocol.cpp] <CGInventoryEquipment> Decompiled from 1.01.03
+1> Added max drop zen fix
+1> Added new talismans support (128 - 134)
+1> [GameShop.cpp] Added <IsInventoryBuff>
+
+[08.09.2013]
+1> [ObjCalCharacter.cpp] <gObjGetSetItemOption> Fixed lucky item ancient options
+1> [GameShop.cpp] Fixed slot delete
+1> [GensSystem.cpp] <BattleZoneChatMsgSend> Fixed (1.01.03)
+1> [user.cpp] <gObjSecondDurDown> Fixed lucky item dur down (point *)
+
+[09.09.2013]
+1> Fixed golden cherry blossom branch count (50 -> 255)
+1> [GameShop.cpp] Return to OBJECTSTRUCT...
+1> Fixed warehouse / value expand numbers
+
+[10.09.2013]
+1> [protocol.cpp] <CGBuyRequestRecv> Fixed dark lord pets buy
+1> [zzzitem.cpp] <PetValue()> Fixed price for pets
+
+[11.09.2013]
+1> [JewelMixSystem.cpp] <UnMixJewel> Fixed inventory size check
+1> [BloodCastle.cpp] <Load> Fixed time reload
+
+[15.09.2013]
+1> [GMMng.cpp] Fixed system message fox post command
+1> [ChaosCastle.cpp] Added MinPlayersCount
+1> [LuckyItem.cpp] <DGAnsLuckyItemList> Fixed pointer to inventory
+1> [Shop.cpp] Added Ancient item support in shop
+1> [GMMng.cpp] Change method for stats update after add commands
+
+[20.09.2013]
+1> [DSProtocol.cpp] <JGPGetCharList> Fixed character creation read
+
+[23.09.2013]
+1> [GameServer.cpp] Added commonserver reloading (with cs fix)
+
+[26.09.2013]
+1> [user.cpp] <gObjSetCharacter> Fixed PShop inventory item delete
+
+[01.10.2013]
+1> [gObjMonster.cpp] Fixed guard message say
+
+[10.10.2013]
+1> [BloodCastle.cpp] Added prize reader [5]
+
+[12.10.2013]
+1> [user.cpp] <gObjCheckXYMapTile> Fixed false teleport to location for ELF
+1> [ResetSystem.cpp] <FinishResetReq> Added hidden teleport to original location
+
+[13.10.2013]
+1> [CashItemPeriodSystem.cpp] <Initialize> Fixed thread cleaning
+1> Removed "Bill" system
+
+[16.10.2013]
+1> [MUHelper.cpp] <Init> Fixed clearing data if slots isnt null
+1> [user.cpp] <gObjLifeCheck> Added medusa dead message
+
+[17.10.2013]
+1> [ChatFilter.cpp] Fixed cyrillic reading
+1> [MasterLevelSkillTreeSystem.cpp] Fixed reloading
+
+[23.10.2013]
+1> [MUHelper.cpp] Delete slots, now work with objectstruct
+1> [user.cpp] <gObjGetIndex>, <gObjGetIndexByAccount> fixed check NULL chars
+1> [PartyClass.cpp] Fixed party PK status
+1> [user.cpp] Fixed PK item drop without option
+1> [BuffCalc.cpp], [ClassCalc.cpp] - Fixed calls if player is not online and dofile
+1> [ChatFilter.cpp] Fixed check for null chars
+1> [ResetSystem.cpp] Fixed money pay & stats after reset
+1> [gObjMonster.cpp] Added ItemExcDropRate
+1> [GameShop.cpp] Fixed open shop if disabled
+1> [CheatGuard.cpp] Fixed level check
+1> [CheatGuard.cpp] Added <m_SpeedHackCheck>
+
+[24.10.2013]
+1> [ObjAttack.cpp] Fixed DarkSide, Chain Drive, Dragon Roar AOE damage formul
+1> [gObjMonster.cpp] Added Zen increase in MapData.txt
+1> [ObjBaseAttack.cpp] Fixed Monk AttackRate / DefenseRate formuls
+1> [BuffEffectSlot.cpp] <CheckItemOptForGetExpEx> Fixed return of bonus EXP
+
+[01.11.2013]
+1> [ObjUseSkill.cpp] Fixed DarkSide skill using
+1> [GMMng.cpp] Added post color custom send & settings in commonserver.cfg
+1> Added PKClear.cpp / h npc
+1> Added OfflineTrade.cpp / h (rewrited and added configs)
+1> Cleaned logs output
+1> [GameMain.cpp] Added CherryBranch count configuration
+1> [GameShop.cpp] Added GameShopCategory list
+1> [ConnectEx.cpp] Fixed ExpandedWarehouse information send
+1> [protocol.cpp] Fixed guild creation without gens
+1> [GensSystem.cpp] Fixed exit from gens if u with guild
+1> [protocol.cpp] Added PartyMaxLevelDiff settings
+1> [user.cpp] <gObjSetCharacter> Fixed 220 quest add
+1> [ResetSystem.cpp] Add marlon quest options
+1> [BuffCalc.cpp] Rewrited from lua to ini
+1> [ClassCalc.cpp] Rewrited from lua to ini
+
+[12.12.2013]
+1> [ResetSystem.cpp] Add Config Reset Skill & Reset Master SKill
+
+[13.12.2013]
+1> [protocol.cpp] Added Private / Guild chat logs output
+1> [GensSystem.cpp] Added ChatPrice member / added price for gens chat
+1> [ObjAttack.cpp] Fixed AllowPK Gens option
+1> Added define <FIX_MAXSTAT> & fixed max stats vlaue to 65k
+1> [ChaosCastle.cpp] Added m_RewardData & rewrited item drop system, now inside ChaosCastle.dat
+
+[14.12.2013]
+1> [Protocol.h][DSProtocol.h] Added New Packet PMSG_ATTACKRESULT,PMSG_REFILL,PMSG_MANASEND,PMSG_CHARMAPJOINRESULT,PMSG_LEVELUP Fix WebZen Visual Bug 65535
+
+[15.12.2013]
+1> [ConnectEx.cpp] <SendLogin> Added force JS disconnect
+1> [ObjUseSkill.cpp] Fix Ice Attack Gens RF Skill ChainDrive
+
+[26.12.2013]
+1> [JewelsEx.cpp] <CheckItem> Fixed add skill option to wrong item
+1> [DevilSquare] Added item reward by rank
+
+[11.01.2014]
+1> [OffExp]	Added Offline Attack System v0.1
+1> [PkClear] Fix Config Pk Level
+1> [Raklion] Fix Raklion Message Gate
+1> [PkEvent] Added Config Pk Status to Event
+
+[14.01.2014]
+1> Fully removed HackLogs
+1> [user.cpp] <gObjInventoryMoveItem> Fixed Imperial scrap of paper
+
+[15.01.2014]
+1> [user.cpp] <gObjLevelUp> removed pet additinal exp, now in CheckItemOptForGetExpEx
+--- UPDv97
+1> [OfflineTrade.cpp] Added log output
+1> [GMMng.cpp] Added Command Teleport Loren Market
+1> [IllusionTempl] Added Reward Drop Item
+1> [MonsterRegenSystem.cpp] Fix Monster Regen
+
+[14.02.2014]
+1> [OffExp.cpp] Close Client Fix
+1> [PVPZone.cpp] Fix Cord Checker
