@@ -283,6 +283,7 @@ int gTamaJJangTime;
 BOOL gIsItemDropRingOfTransform;
 BOOL gIsEledoradoEvent;
 BOOL gDoPShopOpen;
+int gOpenDelay;
 BOOL gDisconnectHackUser;
 int g_iBlockKanturuMapEnter;
 int g_iBlockCastleSiegeMapEnter;
@@ -2539,7 +2540,7 @@ void ReadCommonServerInfo()
 	gPacketCheckSum.Init();
 
 	gDoPShopOpen = GetPrivateProfileInt("GameServerInfo","PersonalShopOpen", 0, gDirPath.GetNewPath("commonserver.cfg"));
-
+	gOpenDelay = GetPrivateProfileInt("GameServerInfo","PersonalShopDelay", 0, gDirPath.GetNewPath("commonserver.cfg"));
 	ReadEventInfo(MU_EVENT_ALL );
 
 	g_iUseCharacterAutoRecuperationSystem = GetPrivateProfileInt("GameServerInfo","UseCharacterAutoRecuperationSystem", 0, gDirPath.GetNewPath("commonserver.cfg"));
@@ -4416,6 +4417,7 @@ void ReadGameEtcInfo(MU_ETC_TYPE eGameEtcType)
 			gExcItemDropRate = GetPrivateProfileInt("GameServerInfo", "ItemExcDropRate", 10, gDirPath.GetNewPath("commonserver.cfg"));
 
 			gDoPShopOpen = GetPrivateProfileInt("GameServerInfo", "PersonalShopOpen", 0, gDirPath.GetNewPath("commonserver.cfg"));
+			gOpenDelay = GetPrivateProfileInt("GameServerInfo","PersonalShopDelay", 0, gDirPath.GetNewPath("commonserver.cfg"));
 			gAttackSpeedTimeLimit = GetPrivateProfileInt("GameServerInfo", "AttackSpeedTimeLimit", 800, gDirPath.GetNewPath("commonserver.cfg"));
 			bIsIgnorePacketSpeedHackDetect = GetPrivateProfileInt("GameServerInfo", "IsIgnorePacketHackDetect", 0, gDirPath.GetNewPath("commonserver.cfg"));
 			gHackCheckCount = GetPrivateProfileInt("GameServerInfo", "HackCheckCount", 5, gDirPath.GetNewPath("commonserver.cfg"));
@@ -4456,6 +4458,7 @@ void ReadGameEtcInfo(MU_ETC_TYPE eGameEtcType)
 			break;
 		case 5:
 			gDoPShopOpen = GetPrivateProfileInt("GameServerInfo", "PersonalShopOpen", 0, gDirPath.GetNewPath("commonserver.cfg"));
+			gOpenDelay = GetPrivateProfileInt("GameServerInfo","PersonalShopDelay", 0, gDirPath.GetNewPath("commonserver.cfg"));
 			break;
 		case 6:
 			GetPrivateProfileString("GameServerInfo", "PKItemDrop", "1", szTemp, 5, gDirPath.GetNewPath("commonserver.cfg"));

@@ -1368,7 +1368,9 @@ void gObjCharZeroSet(int aIndex)
 	lpObj->OffExpTick = 0;
 	lpObj->OffExpSpeed = 0;
 #endif
-
+	lpObj->gOpenDelayTick = 0;
+	lpObj->gOffTradeTick = 0;
+	lpObj->CallToClose = 0;
 #ifdef WZQUEST
 	lpObj->m_bUserQuestInfoSent = 0;
 	// ----
@@ -18742,6 +18744,24 @@ void gObjSecondProc()
                 OffExp.TickTimes(n);
             }//OffExp.TickTimes(n);
 #endif
+			if( lpObj->m_bPShopOpen )
+			{
+				lpObj->gOpenDelayTick++;
+			}
+			else
+			{
+				lpObj->gOpenDelayTick = 0;
+			}
+
+			if( lpObj->IsOffTrade == false && lpObj->CallToClose == true)
+			{
+				lpObj->gOffTradeTick++;
+			}
+			else
+			{
+				lpObj->gOffTradeTick = 0;
+			}
+
 			if(GetTickCount() - lpObj->AutoSaveTime > 600000)
 			{
 				GJSetCharacterInfo(lpObj,n,0, 0);

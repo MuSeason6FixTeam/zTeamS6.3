@@ -230,6 +230,7 @@ extern int gTamaJJangTime;
 extern BOOL gIsItemDropRingOfTransform;
 extern BOOL gIsEledoradoEvent;
 extern BOOL gDoPShopOpen;
+extern int gOpenDelay;
 extern BOOL gDisconnectHackUser;
 extern int g_iBlockKanturuMapEnter;
 extern int g_iBlockCastleSiegeMapEnter;
