@@ -148,8 +148,8 @@ int CSkillAdditionInfo::Load(LPSTR lpszFileName)
 	this->m_IgnoreDefenseTimeMax				= GetPrivateProfileInt("SkillInfo", "IgnoreDefenseTimeMax", 600, gDirPath.GetNewPath(lpszFileName)); 
 	this->m_IncreaseHealthEffectStart			= GetPrivateProfileInt("SkillInfo", "IncreaseHealthEffectStart", 600, gDirPath.GetNewPath(lpszFileName)); 
 	this->m_IncreaseHealthEffectSub				= GetPrivateProfileInt("SkillInfo", "IncreaseHealthEffectSub", 600, gDirPath.GetNewPath(lpszFileName)); 
-
-	//this->m_IncreaseHealthEffectDiv				= GetPrivateProfileInt("SkillInfo", "IncreaseHealthEffectDiv", 600, gDirPath.GetNewPath(lpszFileName)); 
+	this->m_IncreaseHealthEffectDiv				= GetPrivateProfileInt("SkillInfo", "IncreaseHealthEffectDiv", 600, gDirPath.GetNewPath(lpszFileName)); 
+	
 	char szTempEx[256] = { 0 };
 	GetPrivateProfileString("SkillInfo", "DecTimePerAttackSpeed", "10.00", szTempEx, 256, gDirPath.GetNewPath(lpszFileName));
 	this->m_IncreaseHealthEffectDiv = atof(szTempEx);

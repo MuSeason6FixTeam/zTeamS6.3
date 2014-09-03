@@ -18737,7 +18737,10 @@ void gObjSecondProc()
 		if(lpObj->Connected > PLAYER_LOGGED &&	lpObj->Type == OBJ_USER)
 		{
 #ifdef OFFEXP
-			OffExp.TickTimes(n);
+			if ( lpObj->OffExp == 1 )
+            {
+                OffExp.TickTimes(n);
+            }//OffExp.TickTimes(n);
 #endif
 			if(GetTickCount() - lpObj->AutoSaveTime > 600000)
 			{

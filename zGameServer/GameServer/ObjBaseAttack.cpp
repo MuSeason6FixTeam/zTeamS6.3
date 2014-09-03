@@ -402,7 +402,7 @@ BOOL CObjBaseAttack::ResistanceCheck(LPOBJ lpObj, LPOBJ lpTargetObj, int skill)
 	}
 	else if ( skill == 1 || skill == 384 )
 	{
-		if(gObjCheckUsedBuffEffect(lpObj, AT_POISON) == 0) //test!!! originaly: lpObj
+		if(gObjCheckUsedBuffEffect(lpObj, AT_POISON) == 0) 
 		{
 			if ( retResistance(lpTargetObj, 1) == 0 )
 			{
@@ -419,8 +419,6 @@ BOOL CObjBaseAttack::ResistanceCheck(LPOBJ lpObj, LPOBJ lpTargetObj, int skill)
 		{
 			return FALSE;
 		}
-
-		//return TRUE; //test!!!
 	}
 	else if ( skill == 38 || skill == 387 ) // Death Poison
 	{
@@ -455,7 +453,6 @@ BOOL CObjBaseAttack::ResistanceCheck(LPOBJ lpObj, LPOBJ lpTargetObj, int skill)
 				lpTargetObj->DelayActionTime = 800;
 				lpTargetObj->DelayLevel = 1;
 				gObjAddBuffEffect(lpTargetObj, AT_ICE, 20, 0, 0, 0, 10);
-				//return TRUE;//test!!!
 			}
 			else
 			{
@@ -466,8 +463,6 @@ BOOL CObjBaseAttack::ResistanceCheck(LPOBJ lpObj, LPOBJ lpTargetObj, int skill)
 		{
 			return FALSE;
 		}
-
-		//return TRUE; //test!!!
 	}
 	else if ( skill == 51 || skill == 424 ) // Ice Arrow
 	{

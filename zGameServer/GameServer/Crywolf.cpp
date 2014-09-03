@@ -398,11 +398,11 @@ void CCrywolf::SetCrywolfCommonNPC(int iOccupationState)
 
 		if ( iOccupationState == 2 || iOccupationState == 1)
 		{
-			gObjAddBuffEffect(lpObj, AT_CW_NPC_TRANSPARENCY, 0, 0, 0, 0, -10);
+			//gObjAddBuffEffect(lpObj, AT_CW_NPC_TRANSPARENCY, 0, 0, 0, 0, -10); //test!
 		}
 		else if ( iOccupationState == 0 )
 		{
-			gObjRemoveBuffEffect(lpObj, AT_CW_NPC_TRANSPARENCY);
+			//gObjRemoveBuffEffect(lpObj, AT_CW_NPC_TRANSPARENCY); //test!
 		}
 	}
 }

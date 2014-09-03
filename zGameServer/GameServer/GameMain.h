@@ -653,6 +653,8 @@ extern BOOL gEnableBattleSoccer;
 extern int  gLootingTime;
 extern int  gPkItemDrop;
 extern int  gItemDropPer;
+extern int	gItemLuckDropPer;
+extern int	gItemSkillDropPer;
 extern int gExcItemDropRate;
 extern int  gEvent1ItemDropTodayMax;
 extern int  gEvent1ItemDropTodayPercent;

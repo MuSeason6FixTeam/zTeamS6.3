@@ -2702,13 +2702,13 @@ BOOL CObjAttack::Attack(LPOBJ lpObj, LPOBJ lpTargetObj, CMagicInf* lpMagic,  int
 
 		gObjLifeCheck(lpTargetObj, lpObj, AttackDamage, 0, MSBFlag, MsgDamage, skill, iTotalShieldDamage);
 
-		if ( iTotalShieldDamage > 0 )
+		/*if ( iTotalShieldDamage > 0 )
 		{
 			LogAddTD("[PvP System] Victim:[%s][%s], Attacker:[%s][%s] - SD[%d] HP[%f] -> SD[%d] HP[%f]",
 				lpTargetObj->AccountID, lpTargetObj->Name, lpObj->AccountID, lpObj->Name,
 				lpTargetObj->iShield + iTotalShieldDamage, lpTargetObj->Life + AttackDamage, 
 				lpTargetObj->iShield, lpTargetObj->Life);
-		}
+		}*/
 	}
 	else
 	{

@@ -754,6 +754,8 @@ BOOL gEnableBattleSoccer=1;
 int	gLootingTime=3;
 int	gPkItemDrop=1;
 int	gItemDropPer=10;
+int gItemLuckDropPer = 4; //TEST!!!
+int gItemSkillDropPer = 6; //TEST!!!
 int	gExcItemDropRate = 10;
 int  gEvent1ItemDropTodayMax=1;
 int  gEvent1ItemDropTodayPercent=80;
@@ -2173,6 +2175,10 @@ void ReadCommonServerInfo()
 
 	GetPrivateProfileString("GameServerInfo", "ItemDropPer", "10", szTemp, 5, gDirPath.GetNewPath("commonserver.cfg"));
 	gItemDropPer = atoi(szTemp);
+	GetPrivateProfileString("GameServerInfo", "ItemLuckDropPer", "4", szTemp, 5, gDirPath.GetNewPath("commonserver.cfg"));
+	gItemLuckDropPer = atoi(szTemp);
+	GetPrivateProfileString("GameServerInfo", "ItemSkillDropPer", "6", szTemp, 5, gDirPath.GetNewPath("commonserver.cfg"));
+	gItemSkillDropPer = atoi(szTemp);
 	gExcItemDropRate = GetPrivateProfileInt("GameServerInfo", "ItemExcDropRate", 10, gDirPath.GetNewPath("commonserver.cfg"));
 	LogAddTD(lMsg.Get(413), gItemDropPer);
 	gZenDurationTime = GetPrivateProfileInt("GameServerInfo","ZenDurationTime",30, gDirPath.GetNewPath("commonserver.cfg"));
@@ -2591,7 +2597,7 @@ void ReadCommonServerInfo()
 		g_bPostFloodProtectTime = 5000;
 	}
 
-	if( g_PostChatColor < 1 || g_PostChatColor > 10 )
+	if( g_PostChatColor < 1 || g_PostChatColor > 8 ) //original 10 quskevel fix for ????
 	{
 		g_PostChatColor = 2;
 	}

@@ -6939,10 +6939,10 @@ void CGPShopAnsClose(int aIndex, BYTE btResult)
 {
 	if( gObj[aIndex].IsOffTrade )
 	{
-		gObjDel(aIndex);
+		//gObjDel(aIndex); //test!!!
 	}
 	// ----
-	gObj[aIndex].IsOffTrade = false;
+	//gObj[aIndex].IsOffTrade = false; //test!!!
 	// ----
 	LogAddTD("[PShop] [%s][%s] Close PShop",
 		gObj[aIndex].AccountID, gObj[aIndex].Name);

@@ -838,7 +838,7 @@ int	CItemSocketOptionSystem::GetSphereDropInfo(int iMonsterLevel)
 	{
 		iSphereLevel = 2;
 	}
-	else if( !this->m_SphereDropLevel[0] || this->m_SphereDropLevel[0] > iMonsterLevel )
+	else if( this->m_SphereDropLevel[0] && this->m_SphereDropLevel[0] <= iMonsterLevel )//( !this->m_SphereDropLevel[0] || this->m_SphereDropLevel[0] > iMonsterLevel )
 	{
 		iSphereLevel = 1;
 	}

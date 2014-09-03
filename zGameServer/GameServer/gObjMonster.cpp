@@ -3859,8 +3859,8 @@ if ( lpObj->Class == 501 )
 		}
 		else
 		{
-			option1rand=6;
-			option2rand=4;
+			option1rand=gItemSkillDropPer; //test for luck,skill
+			option2rand=gItemLuckDropPer; //>>
 			option3rand=rand()%100;
 			optionc=rand()%3;
 			NOption = 0;
