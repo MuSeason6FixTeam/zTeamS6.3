@@ -29,3 +29,7 @@
 *.ilk
 *.pdb
 *.log
+*.opensdf
+*.lastbuildstate
+*.pch
+*.vcxprojResolveAssemblyReference.cache
