@@ -2461,25 +2461,25 @@ struct PMSG_MONK_MAGICATTACK_SEND	//-> 9
 };
 // -------------------------------------------------------------------------------
 #pragma pack(1)
-struct PMSG_MONK_DARKSIDE_RECV	//-> 6
+struct PMSG_MONK_DARKSIDE_RECV	// Size=6
 {
-	PBMSG_HEAD h;			//+0
+	PBMSG_HEAD h;			// Size=0
 	// ----
-	BYTE	MagicNumberH;	//+3
-	BYTE	MagicNumberL;	//+4
-	BYTE	TargetNumberH;	//+5
-	BYTE	TargetNumberL;	//+6
+	BYTE	MagicNumberH;	// Size=3
+	BYTE	MagicNumberL;	// Size=4
+	BYTE	TargetNumberH;	// Size=5
+	BYTE	TargetNumberL;	// Size=6
 };
 #pragma pack()
 // -------------------------------------------------------------------------------
 
 #pragma pack(1)
-struct PMSG_MONK_DARKSIDE_SEND	//-> 16
+struct PMSG_MONK_DARKSIDE_SEND // Size=16
 {
-	PBMSG_HEAD2 h;			//+0
+    PBMSG_HEAD2 h;			// Size=0
 	// ----
-	WORD	MagicNumber;	//+3
-	WORD	wTargetList[5];	//+5
+	WORD MagicNumber;		// Size=3
+    WORD wTargetList[5];	// Size=5
 };
 // -------------------------------------------------------------------------------
 #pragma pack()
