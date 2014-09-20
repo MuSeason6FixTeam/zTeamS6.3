@@ -32,4 +32,8 @@
 *.opensdf
 *.lastbuildstate
 *.pch
-*.vcxprojResolveAssemblyReference.cache
+*.cache
+*.res
+*.pch
+*.lastbuildstate
+*.manifest
